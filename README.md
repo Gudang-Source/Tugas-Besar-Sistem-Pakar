@@ -1,7 +1,7 @@
 # Tugas Besar Sistem Pakar
 Repository Ini digunakan untuk memenuhi tugas sistem pakar
 
-## Dengan Judul  :
+## Sistem Informasi Pemilihan Kendaraan Pada Rental Mobil Menggunakan Metode Forward Chaining
 ### kelompok 3  
 1. Arjun Yudha Firwanda    1174008
 2. Dwi Sepniani            1174003
