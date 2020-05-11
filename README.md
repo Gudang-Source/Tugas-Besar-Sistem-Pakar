@@ -11,3 +11,5 @@ Repository Ini digunakan untuk memenuhi tugas sistem pakar
 6. Nico Ekklesia Sembiring 1174096
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+
+# Gunakan Perintah Berikut Agar Aplikasi Berjalan Dengan Semestinya
