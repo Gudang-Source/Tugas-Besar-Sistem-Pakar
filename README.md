@@ -16,6 +16,12 @@ Repository Ini digunakan untuk memenuhi tugas sistem pakar
 ## Gunakan Perintah Berikut Agar Aplikasi Berjalan Dengan Semestinya : 
 ## Instal composer terlebih dahulu
 [Download disini](https://getcomposer.org/download/)
+
+### Instal packagenya terlebih dahulu
+```
+composer install
+```
+
 ### Copy isi file .env.example
 ```
 cp .env.example .env
