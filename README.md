@@ -3,8 +3,8 @@ Repository Ini digunakan untuk memenuhi tugas sistem pakar
 
 ## Dengan Judul  :
 ### kelompok 3  
-1. Arjun Yudha Firwanda    1174008
-2. Dwi Sepniani            1174003
+1. Arjun Yuda Firwanda    1174008
+2. Dwi Septiani            1174003
 3. Dwi yulianingsih        1174009
 4. Felix Setiawan Lase     1174026
 5. Harun Ar - Rasyid       1174027
