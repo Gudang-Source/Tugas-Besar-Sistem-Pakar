@@ -2,6 +2,6 @@
 
 @section('content')
 
-@include('layouts/includes/home')
+@include('layouts/includes/tovbar')
 
 @endsection
