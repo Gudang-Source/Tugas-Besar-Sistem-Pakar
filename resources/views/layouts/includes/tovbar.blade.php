@@ -7,11 +7,11 @@
           <nav id="nav-menu-container">
               <ul class="nav-menu">
                 <li class="menu-active"><a href="index.html">Home</a></li>
-                <li><a href="about.html">Jenis Kendaraan</a></li>
-                <li><a href="service.html">Kategori</a></li>
-                <li><a href="gallery.html">Kendaraan</a></li>
-                <li><a href="elements.html">Rental Kendaraan</a></li>
-                <li><a href="contact.html">Rules</a></li>
+                <li><a href="/jenis">Jenis Kendaraan</a></li>
+                <li><a href="/kategori">Kategori</a></li>
+                <li><a href="/kendaraan">Kendaraan</a></li>
+                <li><a href="/rental">Rental Kendaraan</a></li>
+                <li><a href="/rules">Rules</a></li>
                 <li><a href="contact.html">User</a></li>
 
               </ul>
