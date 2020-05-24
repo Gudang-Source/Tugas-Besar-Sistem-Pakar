@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,14 @@ Route::get('/', function () {
 
 
 Route::get('/admin', 'AdminController@index');
+Route::get('/kategori', 'KategoriController@index');
+Route::post('/kategori/create', 'KategoriController@input_kategori');
+
+Route::get('/kendaraan', 'KendaraanController@index');
+Route::post('/kendaraan/store', 'KendaraanController@store');
+
+Route::get('/jenis', 'JenisController@index');
+
+Route::get('/rules', 'RulesController@index');
+
+Route::get('/rental', 'RentalController@index');
