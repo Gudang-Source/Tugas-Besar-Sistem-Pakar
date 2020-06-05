@@ -27,7 +27,7 @@
                         <th>KODE KENDARAAN</th>
                         <th>KETERANGAN</th>
                         <th>ID KENDARAAN</th>
-
+                        
                         <th>AKSI</th>
                     </tr>
                     @foreach ($data_kendaraan as $k)

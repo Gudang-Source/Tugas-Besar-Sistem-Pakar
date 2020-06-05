@@ -23,6 +23,7 @@ Route::get('/admin', 'AdminController@index');
 Route::get('/kategori', 'KategoriController@index');
 Route::post('/kategori/create', 'KategoriController@input_kategori');
 
+
 Route::get('/kendaraan', 'KendaraanController@index');
 Route::post('/kendaraan/store', 'KendaraanController@store');
 
@@ -31,3 +32,6 @@ Route::get('/jenis', 'JenisController@index');
 Route::get('/rules', 'RulesController@index');
 
 Route::get('/rental', 'RentalController@index');
+
+Route::get('kategori/{id}/Edit','KategoriController@Edit');
+Route::post('kategori/{id}/Update','KategoriController@Update');

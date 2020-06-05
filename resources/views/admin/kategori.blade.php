@@ -31,6 +31,7 @@
                     <tr>
                     <td>{{$kategori->id}}</td>
                     <td>{{$kategori->nama_kategori}}</td>
+                    <td><a href="/kategori/{{$kategori->id}}/Edit" class="btn btn-warning btn-sm">Edit</a></td>
                     </tr>
                     @endforeach
 
