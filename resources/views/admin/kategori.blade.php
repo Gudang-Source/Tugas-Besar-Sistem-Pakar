@@ -31,7 +31,11 @@
                     <tr>
                     <td>{{$kategori->id}}</td>
                     <td>{{$kategori->nama_kategori}}</td>
-                    <td><a href="/kategori/{{$kategori->id}}/Edit" class="btn btn-warning btn-sm">Edit</a></td>
+                    <td>
+                        <a href="/kategori/{{$kategori->id}}/Edit" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="/kategori/{{$kategori->id}}/delete" class="btn btn-danger btn-sm" onclick="return confirm('Yakin dihapus ?')">Delete</a>
+                    </td>
+                    a
                     </tr>
                     @endforeach
 

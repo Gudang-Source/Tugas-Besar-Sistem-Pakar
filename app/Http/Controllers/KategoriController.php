@@ -30,4 +30,11 @@ class KategoriController extends Controller
         Kategori::update(['nama_kategori' => $request->update_kategori]);
         dd($Kategori);
     }
+
+    public function delete($id)
+    {
+        $kategori = \App\Kategori::find($id);
+        $kategori ->delete($kategori);
+        return redirect('/kategori')->with('sukses','Dara berhasil di hapus');
+    }
 }

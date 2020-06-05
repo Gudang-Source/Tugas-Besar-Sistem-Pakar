@@ -33,5 +33,6 @@ Route::get('/rules', 'RulesController@index');
 
 Route::get('/rental', 'RentalController@index');
 
-Route::get('kategori/{id}/Edit','KategoriController@Edit');
-Route::post('kategori/{id}/Update','KategoriController@Update');
+Route::get('/kategori/{id}/Edit','KategoriController@Edit');
+Route::post('/kategori/{id}/Update','KategoriController@Update');
+Route::get('/kategori/{id}/delete','KategoriController@delete');
