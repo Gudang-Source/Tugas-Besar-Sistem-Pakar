@@ -14,25 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'AwalController@index');
+Route::get('/booking', 'AwalController@booking');
+Route::post('/hasil', 'AwalController@hasil');
+
+Route::get('/login','AuthController@index')->name('login');
+Route::post('/postlogin','AuthController@postlogin');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/admin', 'AdminController@index');
+
+    Route::get('/admin/kategori', 'KategoriController@index');
+    Route::post('/admin/kategori/create', 'KategoriController@store');
+    Route::get('/admin/kategori/{kategori}/delete', 'KategoriController@destroy');
+
+    Route::get('/admin/kendaraan', 'KendaraanController@index');
+    Route::post('/admin/kendaraan/create', 'KendaraanController@store');
+    Route::get('/admin/kendaraan/{kendaraan}/delete', 'KendaraanController@destroy');
+
+    Route::get('/admin/jenis', 'AdminController@jenis');
+    Route::get('/admin/rules', 'AdminController@rules');
+
+    Route::get('/admin/rental', 'AdminController@rental');
 });
 
-
-Route::get('/admin', 'AdminController@index');
-Route::get('/kategori', 'KategoriController@index');
-Route::post('/kategori/create', 'KategoriController@input_kategori');
-
-
-Route::get('/kendaraan', 'KendaraanController@index');
-Route::post('/kendaraan/store', 'KendaraanController@store');
-
-Route::get('/jenis', 'JenisController@index');
-
-Route::get('/rules', 'RulesController@index');
-
-Route::get('/rental', 'RentalController@index');
-
-Route::get('/kategori/{id}/Edit','KategoriController@Edit');
-Route::post('/kategori/{id}/Update','KategoriController@Update');
-Route::get('/kategori/{id}/delete','KategoriController@delete');

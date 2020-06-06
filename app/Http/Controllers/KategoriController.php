@@ -2,39 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Kategori;
 use Illuminate\Http\Request;
-use \App\Model\Kategori;
 
 class KategoriController extends Controller
 {
     public function index()
     {
-        $data_kategori = Kategori::all();
-        return view('admin/kategori',['data_kategori' => $data_kategori]);
+        $kategori = Kategori::orderBy('id','desc')->get();
+        return view('admin/kategori/index',compact(['kategori']));
     }
 
-    public function input_kategori(Request $request)
+    public function store(Request $request)
     {
-        Kategori::create(['nama_kategori' => $request->input_kategori]);
-        return redirect('/kategori')->with('sukses', 'Kategori Berhasil di Input');
+        Kategori::create($request->all());
+        return redirect()->back()->with('status','Data Berhasil Masuk');
     }
 
-    public function edit($id)
+    public function update(Request $request, Kategori $kategori)
     {
-        $kategori = \App\Model\Kategori::find($id);
-        return view('admin/kategori/edit',['kategori => $kategori']);
+        $kategori = Kategori::find($kategori->id)->update(['nama_kategori'=>$request->value]);
     }
 
-    public function update(Request $request,$id)
+    public function destroy(Kategori $kategori)
     {
-        Kategori::update(['nama_kategori' => $request->update_kategori]);
-        dd($Kategori);
-    }
-
-    public function delete($id)
-    {
-        $kategori = \App\Kategori::find($id);
-        $kategori ->delete($kategori);
-        return redirect('/kategori')->with('sukses','Dara berhasil di hapus');
+        Kategori::destroy($kategori->id);
+        return redirect()->back()->with('status','Data Berhasil Dihapus');
     }
 }
