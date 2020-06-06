@@ -17,7 +17,7 @@ class CreateTableRentalKendaraan extends Migration
             $table->id();
             $table->string('nama_peminjam',25);
             $table->integer('durasi')->unsigned();
-            $table->date('mulai_pinjam');
+            $table->timestamp('mulai_pinjam');
             $table->integer('harga_total')->unsigned();
             $table->timestamps();
         });
