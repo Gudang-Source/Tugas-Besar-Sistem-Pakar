@@ -19,4 +19,9 @@ class AuthController extends Controller
         }
         return redirect()->back()->with('status','Gagal Login');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+    }
 }
