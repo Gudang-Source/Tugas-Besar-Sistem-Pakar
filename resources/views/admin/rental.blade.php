@@ -21,7 +21,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $r->nama_peminjam }}</td>
                         <td>{{ $r->durasi }} Hari</td>
-                        <td>{{ $r->mulai_pinjam->format('D, d M Y') }}</td>
+                        <td>{{ $r->mulai_pinjam}}</td>
                         <td>Rp. {{ number_format($r->harga_total,2,',','.') }}</td>
                     </tr>
                 @endforeach
