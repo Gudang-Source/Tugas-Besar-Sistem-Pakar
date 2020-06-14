@@ -31,8 +31,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-Pada file .env yang telah dibuat, ganti DB_DATABASE dengan ***sispar***
-dan database tersebut harus ada pada web server kalian (phpmyadmin)
+Pada file .env yang telah dibuat, buat database kosong dengan nama ***sispar*** pada phpmyadmin 
 
 ### Lakukan Migrasi Database
 ```
