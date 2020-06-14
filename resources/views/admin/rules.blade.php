@@ -28,7 +28,6 @@
                     <th>K017</th>
                     <th>K018</th>
                     <th>K019</th>
-                    <th>K020</th>
                 </tr>
             </thead>
             <tbody>

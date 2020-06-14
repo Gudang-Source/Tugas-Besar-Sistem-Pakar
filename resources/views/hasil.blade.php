@@ -41,16 +41,11 @@
     <section class="banner-area relative" id="home">
         <div class="overlay overlay-bg"></div>
         <div class="container">
-            @if ('status')
-            <div class="alert alert-danger" role="alert">
-                {{session('status')}}
-            </div>
-            @endif
             <div class="row fullscreen d-flex align-items-center justify-content-between">
                 <div class="col-lg col-md-6 header-right">
                     <h4 class="pb-30">Jenis Kendaraan Yang Diprediksi</h4>
                     <ul>
-                        
+
                         <li>Nama Peminjam : {{ $rental->nama_peminjam }}</li>
                         <li>Durasi Peminjaman : {{ $rental->durasi }}</li>
                         <li>Tanggal Peminjaman : {{ $rental->mulai_pinjam }}</li>
@@ -59,7 +54,9 @@
                             <li>Jenis Kendaraan Yang Dipinjam : {{ $cj->jns_kendaraan }}</li>
                             <li>Dengan Harga Sewa  : Rp. {{ number_format($cj->harga,2,',','.') }} / Hari</li>
                         @endforeach
+                        <li>Harga Total : Rp. {{ number_format($rental->harga_total,2,',','.') }}</li>
                     </ul>
+                    <a class="btn btn-info" href="{{ url('/') }}">Kembali</a>
                 </div>
             </div>
         </div>
