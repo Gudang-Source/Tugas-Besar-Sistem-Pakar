@@ -41,18 +41,13 @@
     <section class="banner-area relative" id="home">
         <div class="overlay overlay-bg"></div>
         <div class="container">
-            @if ('status')
-            <div class="alert alert-danger" role="alert">
-                {{session('status')}}
-            </div>
-            @endif
             <div class="row fullscreen d-flex align-items-center justify-content-between">
                 <div class="col-lg col-md-6 header-right">
                     <h4 class="pb-30">Silahkan Masukkan Data Untuk Merental Kendaraan</h4>
                     <form class="form" method="POST" action="{{ url('/hasil') }}">
                         @csrf
                         <div class="from-group">
-                            <input class="form-control txt-field" type="text" name="nama_peminjam" placeholder="Nama"
+                            <input class="form-control txt-field" type="text" name="nama_peminjam" placeholder="Nama Peminjam"
                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'nama'">
                             <input class="form-control txt-field" type="number" name="durasi"
                                 placeholder="Durasi / hari" onfocus="this.placeholder = ''"
@@ -67,154 +62,77 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select">
-                                        <select name="pengunaan">
-                                            <option value="" disabled selected hidden>Penggunaan</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 1)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select2">
-                                        <select name="keperluan">
-                                            <option value="" disabled selected hidden>Pilih Keperluan</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 6)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                        <div class="form-group">
+                            <div class="default-select" id="default-select">
+                                <select name="keperluan">
+                                    <option value="" disabled selected hidden>Keperluan</option>
+                                    @foreach ($kendaraan as $k)
+                                    @if ($k->id_kategori == 1)
+                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select2">
-                                        <select name="jalan1">
-                                            <option value="" disabled selected hidden>Kondisi Jalan</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 2)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select2">
-                                        <select name="jalan2">
-                                            <option value="" disabled selected hidden>Kondisi Jalan</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 2)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+
+                        <div class="form-group">
+                            <div class="default-select" id="default-select2">
+                                <select name="medan">
+                                    <option value="" disabled selected hidden>Jenis Medan</option>
+                                    @foreach ($kendaraan as $k)
+                                    @if ($k->id_kategori == 2)
+                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select2">
-                                        <select name="roda">
-                                            <option value="" disabled selected hidden>Jumlah Roda</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 3)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select2">
-                                        <select name="kursi">
-                                            <option value="" disabled selected hidden>Jumlah Kursi</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 4)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                        <div class="form-group">
+                            <div class="default-select" id="default-select2">
+                                <select name="roda">
+                                    <option value="" disabled selected hidden>Jumlah Roda</option>
+                                    @foreach ($kendaraan as $k)
+                                    @if ($k->id_kategori == 3)
+                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select2">
-                                        <select name="perjalan1">
-                                            <option value="" disabled selected hidden>Perjalan</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 5)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select2">
-                                        <select name="perjalan2">
-                                            <option value="" disabled selected hidden>Perjalan</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 5)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                        <div class="form-group">
+                            <div class="default-select" id="default-select2">
+                                <select name="kursi">
+                                    <option value="" disabled selected hidden>Jumlah Kursi</option>
+                                    @foreach ($kendaraan as $k)
+                                    @if ($k->id_kategori == 4)
+                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select2">
-                                        <select name="spesial1">
-                                            <option value="" disabled selected hidden>Spesial</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 7)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                        <div class="form-group">
+                            <div class="default-select" id="default-select2">
+                                <select name="perjalanan">
+                                    <option value="" disabled selected hidden>Perjalanan</option>
+                                    @foreach ($kendaraan as $k)
+                                    @if ($k->id_kategori == 5)
+                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <div class="default-select" id="default-select2">
-                                        <select name="spesial2">
-                                            <option value="" disabled selected hidden>Spesial</option>
-                                            @foreach ($kendaraan as $k)
-                                            @if ($k->id_kategori == 7)
-                                            <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
-                                            @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="default-select" id="default-select2">
+                                <select name="tambahan">
+                                    <option value="" disabled selected hidden>Fitur Tambahan</option>
+                                    @foreach ($kendaraan as $k)
+                                    @if ($k->id_kategori == 6)
+                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    @endif
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">

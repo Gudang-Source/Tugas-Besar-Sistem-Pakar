@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{ asset('assets/root/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/root/css/jquery-ui.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/root/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/root/css/toastr.css') }}">
 </head>
 
 <body>
@@ -77,6 +78,12 @@
     <script src="{{ asset('assets/root/js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ asset('assets/root/js/mail-script.js') }}"></script>
     <script src="{{ asset('assets/root/js/main.js') }}"></script>
+    <script src="{{ asset('assets/root/js/toastr.js') }}"></script>
+    <script>
+        @if (session('status'))
+            toastr.error("{{ session('status') }}", 'Gagal')
+        @endif
+    </script>
 </body>
 
 </html>

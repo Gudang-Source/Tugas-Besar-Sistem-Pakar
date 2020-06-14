@@ -101,7 +101,7 @@ $('.delete').click(function(){
             icon: "warning",
             buttons: true,
             dangerMode: true,
-        });
+        })
         .then((willDelete) => {
             if (willDelete) {
                 window.location = "/admin/kendaraan/" + kendaraan_id + "/delete";

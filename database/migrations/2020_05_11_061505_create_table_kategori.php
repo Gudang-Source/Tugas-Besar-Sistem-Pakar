@@ -20,27 +20,12 @@ class CreateTableKategori extends Migration
             $table->timestamps();
         });
         DB::table('kategori')->insert([
-            [
-                'nama_kategori' => 'Penggunaan',
-            ],
-            [
-                'nama_kategori' => 'Jalan',
-            ],
-            [
-                'nama_kategori' => 'Roda',
-            ],
-            [
-                'nama_kategori' => 'Kursi',
-            ],
-            [
-                'nama_kategori' => 'Perjalanan',
-            ],
-            [
-                'nama_kategori' => 'Keperluan',
-            ],
-            [
-                'nama_kategori' => 'Spesial',
-            ],
+            ['nama_kategori' => 'Keperluan'],
+            ['nama_kategori' => 'Jenis Medan'],
+            ['nama_kategori' => 'Jumlah Roda'],
+            ['nama_kategori' => 'Jumlah Kursi'],
+            ['nama_kategori' => 'Perjalanan'],
+            ['nama_kategori' => 'Fitur Tambahan']
         ]);
     }
 
