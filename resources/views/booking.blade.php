@@ -137,7 +137,7 @@
                         </div>
                         <div class="form-group">
                             <button type="submit"
-                                class="btn btn-default btn-lg btn-block text-center text-uppercase">Booking</button>
+                                class="btn btn-default btn-lg btn-block text-center text-uppercase">Cari Rekomendasi Kendaraan</button>
                         </div>
                     </form>
                 </div>
@@ -145,9 +145,7 @@
         </div>
     </section>
     <!-- End banner Area -->
-    <footer id="footer">
-        <img class="footer-bottom" src="{{ asset('assets/root/img/footer-bottom.png') }}" alt="">
-    </footer>
+
 
     <script src="{{ asset('assets/root/js/vendor/jquery-2.2.4.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

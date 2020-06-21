@@ -50,10 +50,10 @@
                         085 940 665 680
                     </h1>
                     <p class="pt-10 pb-10 text-white">
-                        Rental Mobile ini menyediakan beberapa varian jenis mobil dan tentunya layak untuk anda pakai
+                        Rental Mobil ini menyediakan beberapa varian jenis mobil dan tentunya layak untuk anda pakai
                         disaat berlibur ataupun sekedar bersenang-senang bareng keluarga..
                     </p>
-                    <a href="{{ url('/booking') }}" class="primary-btn text-uppercase">Booking Kendaraan</a>
+                    <a href="{{ url('/booking') }}" class="primary-btn text-uppercase">Cari Rekomendasi Kendaraan</a>
                 </div>
             </div>
         </div>
