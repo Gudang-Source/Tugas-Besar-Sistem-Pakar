@@ -47,11 +47,22 @@
                     <form class="form" method="POST" action="{{ url('/hasil') }}">
                         @csrf
                         <div class="from-group">
-                            <input class="form-control txt-field" type="text" name="nama_peminjam" placeholder="Nama Peminjam"
-                                onfocus="this.placeholder = ''" onblur="this.placeholder = 'nama'">
+                            <input class="form-control txt-field" type="text" name="nama_peminjam"
+                                placeholder="Nama Peminjam" onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = 'nama'">
+                            @if ($errors->has('nama_peminjam'))
+                            <span class="help-block">
+                                {{ $errors->first('nama_peminjam') }}
+                            </span>
+                            @endif
                             <input class="form-control txt-field" type="number" name="durasi"
                                 placeholder="Durasi / hari" onfocus="this.placeholder = ''"
                                 onblur="this.placeholder = 'Durasi / hari '">
+                            @if ($errors->has('durasi'))
+                            <span class="help-block">
+                                {{ $errors->first('durasi') }}
+                            </span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <div class="input-group dates-wrap">
@@ -61,6 +72,11 @@
                                     <span class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
                                 </div>
                             </div>
+                            @if ($errors->has('mulai_pinjam'))
+                            <span class="help-block">
+                                {{ $errors->first('mulai_pinjam') }}
+                            </span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <div class="default-select" id="default-select">
@@ -68,24 +84,33 @@
                                     <option value="" disabled selected hidden>Keperluan</option>
                                     @foreach ($kendaraan as $k)
                                     @if ($k->id_kategori == 1)
-                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
                                     @endif
                                     @endforeach
                                 </select>
                             </div>
+                            @if ($errors->has('keperluan'))
+                            <span class="help-block">
+                                {{ $errors->first('keperluan') }}
+                            </span>
+                            @endif
                         </div>
-
                         <div class="form-group">
                             <div class="default-select" id="default-select2">
                                 <select name="medan">
                                     <option value="" disabled selected hidden>Jenis Medan</option>
                                     @foreach ($kendaraan as $k)
                                     @if ($k->id_kategori == 2)
-                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
                                     @endif
                                     @endforeach
                                 </select>
                             </div>
+                            @if ($errors->has('medan'))
+                            <span class="help-block">
+                                {{ $errors->first('medan') }}
+                            </span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <div class="default-select" id="default-select2">
@@ -93,11 +118,16 @@
                                     <option value="" disabled selected hidden>Jumlah Roda</option>
                                     @foreach ($kendaraan as $k)
                                     @if ($k->id_kategori == 3)
-                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
                                     @endif
                                     @endforeach
                                 </select>
                             </div>
+                            @if ($errors->has('roda'))
+                            <span class="help-block">
+                                {{ $errors->first('roda') }}
+                            </span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <div class="default-select" id="default-select2">
@@ -105,11 +135,16 @@
                                     <option value="" disabled selected hidden>Jumlah Kursi</option>
                                     @foreach ($kendaraan as $k)
                                     @if ($k->id_kategori == 4)
-                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
                                     @endif
                                     @endforeach
                                 </select>
                             </div>
+                            @if ($errors->has('kursi'))
+                            <span class="help-block">
+                                {{ $errors->first('kursi') }}
+                            </span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <div class="default-select" id="default-select2">
@@ -117,11 +152,16 @@
                                     <option value="" disabled selected hidden>Perjalanan</option>
                                     @foreach ($kendaraan as $k)
                                     @if ($k->id_kategori == 5)
-                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
                                     @endif
                                     @endforeach
                                 </select>
                             </div>
+                            @if ($errors->has('perjalanan'))
+                            <span class="help-block">
+                                {{ $errors->first('perjalanan') }}
+                            </span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <div class="default-select" id="default-select2">
@@ -129,15 +169,21 @@
                                     <option value="" disabled selected hidden>Fitur Tambahan</option>
                                     @foreach ($kendaraan as $k)
                                     @if ($k->id_kategori == 6)
-                                        <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
+                                    <option value="{{ $k->kode_kendaraan }}">{{ $k->keterangan }}</option>
                                     @endif
                                     @endforeach
                                 </select>
                             </div>
+                            @if ($errors->has('tambahan'))
+                            <span class="help-block">
+                                {{ $errors->first('tambahan') }}
+                            </span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <button type="submit"
-                                class="btn btn-default btn-lg btn-block text-center text-uppercase">Cari Rekomendasi Kendaraan</button>
+                                class="btn btn-default btn-lg btn-block text-center text-uppercase">Cari Rekomendasi
+                                Kendaraan</button>
                         </div>
                     </form>
                 </div>

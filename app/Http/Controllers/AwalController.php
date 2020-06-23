@@ -23,6 +23,18 @@ class AwalController extends Controller
 
     public function hasil(Request $request)
     {
+        $this->validate($request, [
+            'nama_peminjam' => 'required',
+            'durasi'        => 'required|numeric',
+            'mulai_pinjam'  => 'required|date',
+            'keperluan'     => 'required',
+            'medan'         => 'required',
+            'roda'          => 'required',
+            'kursi'         => 'required',
+            'perjalanan'    => 'required',
+            'tambahan'      => 'required'
+        ]);
+
         //Mencari ID yang diinputkan
         $filter = $request->except(['nama_peminjam', 'durasi', 'mulai_pinjam', '_token']);
         $qry = DB::table('rules')->select('id');
@@ -69,12 +81,12 @@ class AwalController extends Controller
             ]);;
             $rental = DB::table('rental_kendaraan')->latest()->first();
             return view('hasil', compact(['cari_jenis', 'rental']));
-        }else{
+        } else {
             $id = $qry->value('id');
 
-            if($id == null){
+            if ($id == null) {
                 return redirect('/')->with('status', 'Data Tidak Ditemukan');
-            }else{
+            } else {
                 $cari_jenis = Jenis::where('rules_id', '=', $id)->get();
                 foreach ($cari_jenis as $cj) {
                     $harga = $cj;
